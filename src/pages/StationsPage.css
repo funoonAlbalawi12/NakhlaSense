@@ -1,0 +1,474 @@
+.stations-page {
+  padding-top: 5.5rem;
+}
+
+.stations-subtitle {
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  color: var(--color-text-700);
+  text-align: center;
+}
+
+.stations-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stations-stat-card {
+  padding: 1.25rem 1.35rem;
+}
+
+.stations-stat-card small {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--color-text-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.stations-stat-card strong {
+  color: var(--color-forest-900);
+  font-size: 2rem;
+}
+
+.stations-panel {
+  padding: 1.5rem;
+}
+
+.stations-panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.stations-panel-head h2 {
+  margin: 0 0 0.35rem;
+  color: var(--color-forest-900);
+}
+
+.stations-panel-head p {
+  margin: 0;
+  color: var(--color-text-700);
+}
+
+.stations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.station-card {
+  border: 1px solid var(--color-border-100);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.station-card:hover {
+  transform: translateY(-2px);
+  border-color: #cfdccf;
+  box-shadow: 0 18px 36px rgba(15, 47, 28, 0.08);
+}
+
+.station-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.station-card-top h3 {
+  margin: 0 0 0.25rem;
+  color: var(--color-forest-900);
+  font-size: 1.35rem;
+}
+
+.station-card-top p {
+  margin: 0;
+  color: var(--color-text-700);
+}
+
+.station-badge {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: #eef2ef;
+  color: var(--color-forest-800);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.station-badge.success {
+  background: #e8f7ee;
+  color: #177245;
+}
+
+.station-badge.warning {
+  background: #fff5df;
+  color: #9a6500;
+}
+
+.station-badge.danger {
+  background: #fee9e7;
+  color: #b63d2d;
+}
+
+.station-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.station-meta-item {
+  padding: 0.8rem 0.9rem;
+  border-radius: 14px;
+  background: #f7faf6;
+  border: 1px solid var(--color-border-100);
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  min-width: 0;
+}
+
+.station-meta-item small,
+.station-coverage small {
+  margin: 0;
+  color: var(--color-text-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.station-meta-item strong,
+.station-coverage strong {
+  color: var(--color-forest-900);
+  font-size: 0.98rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.station-meta-item-wide {
+  grid-column: 1 / -1;
+}
+
+.station-coverage {
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  background: #f5f8f4;
+  border: 1px solid var(--color-border-100);
+  color: var(--color-forest-800);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.station-notes {
+  margin: 0;
+  color: var(--color-text-700);
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  background: #fbfcfa;
+  border: 1px solid var(--color-border-100);
+  line-height: 1.65;
+}
+
+.station-actions {
+  display: flex;
+  margin-top: auto;
+}
+
+.station-actions .btn {
+  border-radius: 14px;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+}
+
+.station-empty {
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: #f8faf8;
+  color: #607166;
+}
+
+@media (max-width: 768px) {
+  .stations-panel {
+    padding: 1.15rem;
+  }
+
+  .station-card-top {
+    flex-direction: column;
+  }
+
+  .station-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .station-meta-item-wide {
+    grid-column: auto;
+  }
+}
+
+.farmer-stations-page {
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.farmer-stations-shell {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 3rem;
+}
+
+.farmer-stations-hero {
+  text-align: center;
+  margin-bottom: 1.35rem;
+}
+
+.farmer-stations-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 5vw, 4.3rem);
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+}
+
+.farmer-stations-title-leaf {
+  width: 1.9rem;
+  height: 1.9rem;
+  color: #7fb73f;
+}
+
+.farmer-stations-subtitle {
+  max-width: 780px;
+  margin: 0.75rem auto 0;
+  color: rgba(255,255,255,0.9);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.farmer-stations-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.farmer-stations-summary-card,
+.farmer-stations-panel,
+.farmer-station-card {
+  border: 1px solid rgba(196, 226, 165, 0.18);
+  background: linear-gradient(180deg, rgba(8, 45, 18, 0.88), rgba(8, 40, 16, 0.72));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.farmer-stations-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 20px;
+}
+
+.farmer-stations-summary-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  color: #91c73b;
+  background: rgba(145, 199, 59, 0.16);
+  flex-shrink: 0;
+}
+
+.farmer-stations-summary-icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.farmer-stations-summary-card small,
+.farmer-stations-summary-card p {
+  display: block;
+  margin: 0;
+}
+
+.farmer-stations-summary-card small {
+  color: rgba(255,255,255,0.92);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.farmer-stations-summary-card strong {
+  display: block;
+  margin: 0.2rem 0 0.25rem;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #a8cf44;
+}
+
+.farmer-stations-summary-card p {
+  color: rgba(255,255,255,0.76);
+  font-size: 0.92rem;
+}
+
+.farmer-stations-panel {
+  border-radius: 22px;
+  padding: 1rem 1.1rem;
+}
+
+.farmer-stations-panel-head {
+  margin-bottom: 1rem;
+}
+
+.farmer-stations-panel-head h2 {
+  margin: 0 0 0.3rem;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.farmer-stations-panel-head p {
+  margin: 0;
+  color: rgba(255,255,255,0.82);
+  font-size: 0.96rem;
+}
+
+.farmer-station-card {
+  border-radius: 18px;
+  padding: 1.1rem;
+}
+
+.farmer-station-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.farmer-station-card-top h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.farmer-station-card-top span {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.92rem;
+}
+
+.farmer-station-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.82rem;
+  border-radius: 999px;
+  background: rgba(145, 199, 59, 0.18);
+  color: #c0e15e;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.farmer-station-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.farmer-station-meta-item {
+  padding: 0.85rem 0.9rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.farmer-station-meta-item small {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.farmer-station-meta-item strong {
+  color: #fff;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.farmer-station-meta-item-wide {
+  grid-column: span 2;
+}
+
+.farmer-station-actions {
+  margin-top: 0.9rem;
+}
+
+.farmer-station-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(74, 190, 93, 0.6);
+  border-radius: 10px;
+  background: rgba(18, 70, 29, 0.55);
+  color: #51bf61;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .farmer-stations-summary,
+  .farmer-station-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .farmer-station-meta-item-wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .farmer-stations-shell {
+    padding: 1.25rem 0.9rem 2rem;
+  }
+
+  .farmer-stations-title {
+    gap: 0.5rem;
+  }
+
+  .farmer-stations-title-leaf {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .farmer-station-card-top,
+  .farmer-stations-summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

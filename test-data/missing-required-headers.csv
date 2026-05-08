@@ -1,0 +1,2 @@
+PacketID,ImageName,TempC,RH,AbsHumidity,CO2ppm,GroundDate,GroundTime,GroundLat,GroundLon,GroundGPSValid,DroneDate,DroneTime,DroneLat,DroneLon
+1,palm-001.jpg,34.5,44,16.7,520,2026-05-04,10:00:00,26.301470,50.147592,1,2026-05-04,10:00:01,26.301471,50.147593

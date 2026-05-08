@@ -1,0 +1,83 @@
+.users-page {
+  padding-top: 5.5rem;
+}
+
+.users-subtitle {
+  color: var(--color-text-700);
+  margin-bottom: 1.25rem;
+}
+
+.users-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.users-stat-card strong {
+  display: block;
+  font-size: 1.7rem;
+  color: var(--color-forest-900);
+}
+
+.users-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+}
+
+.users-card-head {
+  margin-bottom: 1rem;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 0.75rem 0.5rem;
+}
+
+.recommendation-form {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.recommendation-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.recommendation-card {
+  border: 1px solid rgba(196, 226, 165, 0.18);
+  border-radius: 16px;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+
+.recommendation-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.recommendation-card h4 {
+  margin: 0 0 0.2rem;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.recommendation-card p,
+.recommendation-card span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 900px) {
+  .users-grid {
+    grid-template-columns: 1fr;
+  }
+}

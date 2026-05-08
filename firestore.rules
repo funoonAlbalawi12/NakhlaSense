@@ -1,0 +1,112 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function userDocPath() {
+      return /databases/$(database)/documents/users/$(request.auth.uid);
+    }
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function validRole(role) {
+      return role in ["admin", "operator", "farmer"];
+    }
+
+    function hasRole(role) {
+      return signedIn() &&
+        exists(userDocPath()) &&
+        get(userDocPath()).data.role == role;
+    }
+
+    function isAdmin() {
+      return hasRole("admin");
+    }
+
+    function isOperator() {
+      return hasRole("operator");
+    }
+
+    function isFarmer() {
+      return hasRole("farmer");
+    }
+
+    function isSystemUser() {
+      return isAdmin() || isOperator() || isFarmer();
+    }
+
+    match /users/{userId} {
+      allow create: if signedIn() &&
+        request.auth.uid == userId &&
+        request.resource.data.uid == userId &&
+        validRole(request.resource.data.role) &&
+        request.resource.data.role != "admin";
+      allow read: if signedIn() && (request.auth.uid == userId || isAdmin());
+      allow update: if signedIn() && (
+        isAdmin() ||
+        (
+          request.auth.uid == userId &&
+          request.resource.data.role == resource.data.role
+        )
+      );
+      allow delete: if isAdmin();
+    }
+
+    match /allowedUsers/{userEmail} {
+      allow read, write: if isAdmin();
+    }
+
+    match /emailOtps/{email} {
+      allow read, write: if false;
+    }
+
+    match /zones/{zoneId} {
+      allow read: if isSystemUser();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /alerts/{alertId} {
+      allow read: if isSystemUser();
+      allow create: if isSystemUser();
+      allow update, delete: if isAdmin();
+    }
+
+    match /telemetry/{telemetryId} {
+      allow read: if isSystemUser();
+      allow create: if isAdmin() || isOperator();
+      allow update, delete: if isAdmin();
+    }
+
+    match /sensor_readings/{readingId} {
+      allow read: if isSystemUser();
+      allow write: if false;
+    }
+
+    match /system_status/{statusId} {
+      allow read: if isSystemUser();
+      allow write: if false;
+    }
+
+    match /analyses/{analysisId} {
+      allow read: if isSystemUser();
+      allow create: if isSystemUser();
+      allow update, delete: if isAdmin();
+    }
+
+    match /crop_guides/{guideId} {
+      allow read: if isSystemUser();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /recommendations/{recommendationId} {
+      allow read: if isSystemUser();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /activity_logs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isSystemUser();
+      allow update, delete: if false;
+    }
+  }
+}

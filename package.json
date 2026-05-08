@@ -8,17 +8,26 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.8",
+    "firebase": "^12.10.0",
+    "lucide-react": "^1.14.0",
     "react": "^19.2.4",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.13.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "recharts": "^3.7.0",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "db:populate": "node scripts/populateDatabase.js populate",
+    "db:clear": "node scripts/populateDatabase.js clear",
+    "db:check": "node scripts/checkFirebase.js",
+    "firebase:setup": "node scripts/setupFirebase.js"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.16.0"
   }
 }
