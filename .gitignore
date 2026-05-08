@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# secrets
+backend-import/serviceAccountKey.json.json
+functions/.env
+functions/.env.nakhlasense
+firebase-debug.log
